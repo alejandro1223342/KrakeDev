@@ -113,8 +113,10 @@ calcularValorTotal = function () {
             Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
         Si funciona, hacer un commit
     */
-
+let mensaje="Valor a pagar por "+nombreProducto+" con "+ porcentajeDescuento + "%" + " de descuento: " + valorTotal;
+mostrarTexto("lblResumen", mensaje)
 }
+
 limpiar = function () {
     /*
         Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
