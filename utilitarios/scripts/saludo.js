@@ -11,6 +11,8 @@ saludar = function (){
     let mensajeBienvenida="Bienvenido "+nombre+" "+apellido
 
     mostrartexto("lblResultado",mensajeBienvenida);
+
+    mostrarImagen("imgSaludo","../files/img/park.gif")
 }
 
 recuperarTexto = function(idComponente){
@@ -40,4 +42,11 @@ mostrartexto = function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
     componente.innerText=mensaje;
+}
+
+mostrarImagen = function (idComponente,rutaImagen){
+
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src=rutaImagen;
 }
