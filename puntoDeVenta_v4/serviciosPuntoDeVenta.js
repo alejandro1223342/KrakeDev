@@ -2,7 +2,7 @@ calcularValorDescuento = function (monto, porcentajeDescuento) {
 
     let calcularDescuento;
 
-    calcularDescuento=(monto*porcentajeDescuento)/100;
+    calcularDescuento=monto*(porcentajeDescuento/100);
 
     return calcularDescuento;
 
@@ -26,8 +26,6 @@ calcularSubtotal = function (precio, cantidad) {
 }
 
 calcularTotal = function (subtotal, descuento, iva) {
-
-
 
     let total;
 
