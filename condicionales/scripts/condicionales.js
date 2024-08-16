@@ -106,7 +106,7 @@ darPermiso= function (notaMatematica,notaFisica,notaGeometria){
 }
 
 dejarSalir= function (notaMatematica,notaFisica,notaGeometria){
-    if((notaMatematica || notaGeometria || notaGeometria)>90 && (notaFisica>notaGeometria)){
+    if((notaMatematica || notaGeometria || notaGeometria)>90 && (notaFisica>notaMatematica)){
         return true;
     }else{
         return false;
