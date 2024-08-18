@@ -9,9 +9,8 @@ ejecutarPrueba2 = function () {
     mensaje = recuperarTexto("txtCadena");
     let cadenaInvertida = invertirCadena(mensaje);
 
-    mostrarTexto("lblInvertida",cadenaInvertida)
+    mostrarTexto("lblInvertida", cadenaInvertida)
 }
-
 
 
 recorrerCadena = function (cadena) {
@@ -32,11 +31,11 @@ recorrerCadena = function (cadena) {
 
 // REVISAR
 invertirCadena = function (cadena) {
-    let cadenaI="";
+    let cadenaI = "";
 
     let caracter;
 
-    for (let posicion = cadena.length -1; posicion >= 0; posicion--) {
+    for (let posicion = cadena.length - 1; posicion >= 0; posicion--) {
 
         caracter = cadena.charAt(posicion);
         cadenaI += caracter;
@@ -44,4 +43,38 @@ invertirCadena = function (cadena) {
 
     console.log(cadenaI);
     return cadenaI;
+}
+
+buscarLetra = function (cadena, letra) {
+    let letraI;
+    let existeLetra = false;
+    for (let i = 0; i < cadena.length; i++) {
+        letraI = cadena.charAt(i);
+
+        //comparo la letra
+        if (letraI === letra) {
+            existeLetra = true;
+        }
+    }
+    //No poner la validación dentro del for
+    if (existeLetra === true) {
+        return true
+    } else {
+        return false;
+    }
+
+}
+
+contarMayusculas=function (cadena) {
+    let letraM;
+    let contadorM=0;
+    for(let i=0;i<cadena.length;i++){
+        letraM = cadena.charAt(i);
+
+       if(esMayuscula(letraM)===true){
+           contadorM++;
+       }
+    }
+
+    console.log(contadorM);
 }
