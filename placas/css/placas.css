@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif; /* Fuente estándar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa el 100% del alto de la ventana */
+    margin: 0; /* Elimina el margen por defecto del body */
+    background-color: #f4f4f4; /* Color de fondo suave */
+}
+
+.container {
+    text-align: center; /* Centra el texto dentro del contenedor */
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Ancho fijo del contenedor */
+}
+
+input[type="text"] {
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+}
+
+input[type="button"] {
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    cursor: pointer; /* Cursor en forma de mano */
+    font-size: 16px; /* Tamaño del texto */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3; /* Color de fondo azul más oscuro al pasar el cursor */
+}
+
+#lblErrores, #lblProvincia, #lblTipoV, #lblPicoPlaca {
+    margin-top: 10px; /* Margen superior */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+#lblErrores {
+    color: #ff0000; /* Color del texto en rojo para los errores */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#lblProvincia, #lblTipoV, #lblPicoPlaca {
+    color: #333; /* Color de texto gris oscuro */
+}

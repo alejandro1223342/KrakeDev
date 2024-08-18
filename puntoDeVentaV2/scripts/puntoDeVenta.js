@@ -52,7 +52,7 @@ calcularValorTotal = function () {
 if(esProductoValido(nombreProducto,"lblError1") & esCantidadValida(cantidad,"lblError2") & esPrecioValido(precioProducto,"lblError3")){
 
     valorDescuento = calcularDescuentoporVolumen(valorSubtotal, cantidad)
-    mostrarTexto("lblDescuento", valorDescuento);
+    mostrarTexto("lblDescuento", valorDescuento.toFixed(2));
 
 }else{
 
