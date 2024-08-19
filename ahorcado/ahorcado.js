@@ -2,6 +2,7 @@
 let palabraSecreta;
 let intentos = 0;
 let coincidencias = 0;
+let errores = 0;
 
 esMayuscula = function (caracter) {
 
@@ -40,8 +41,11 @@ validar = function (letra) {
 
     }
 
-    if(letrasEncontradas===0){
-        alert ("LA LETRA NO ES PARTE DE LA PALABRA")
+    if (letrasEncontradas === 0) {
+        alert("LA LETRA NO ES PARTE DE LA PALABRA")
+        errores++;
+        mostrarAhorcado();
+        console.log(errores)
     }
 
 }
@@ -53,12 +57,14 @@ ingresarLetra = function () {
 
     intentos++;
 
-    if(coincidencias===5){
+    if (coincidencias === 5) {
         alert("HA GANADO")
+        mostrarImagen("ahorcadoImagen","ganador.gif")
     }
 
-    if(intentos===10){
+    if (intentos === 10) {
         alert("HA PERDIDO")
+        mostrarImagen("ahorcadoImagen","./gameOver.gif")
     }
 
     for (let i = 0; i < recuperar.length; i++) {
@@ -112,3 +118,9 @@ guardarPalabra = function () {
 
 }
 
+mostrarAhorcado = function () {
+
+    if (errores > 0) {
+        mostrarImagen("ahorcadoImagen", "./Ahorcado_0"+errores+".png");
+    }
+}
