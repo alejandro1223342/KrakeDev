@@ -1,7 +1,7 @@
 //No se olvide de respirar, mantenga la calma y demuestre lo que sabe
 let palabraSecreta;
 
-esMayuscula = function (caracter){
+esMayuscula = function (caracter) {
 
     if (caracter.charCodeAt(0) >= 65 && caracter.charCodeAt(0) <= 90) {
         return true;
@@ -10,44 +10,29 @@ esMayuscula = function (caracter){
     }
 }
 
-mostrarLetra=function (letra,posicion){
+mostrarLetra = function (letra, posicion) {
 
-
-    for(let i=0;i<letra.length;i++){
-        let caracter = letra.charAt(i);
-        posicion = i;
-        if(posicion===0){
-            console.log(caracter);
-            mostrarTextoEnCaja("div0",caracter)
-        }
-
-        if(posicion===1){
-            mostrarTextoEnCaja("div1",caracter)
-            console.log(caracter);
-        }
-        if(posicion===2){
-            mostrarTextoEnCaja("div2",caracter)
-            console.log(caracter);
-        }
-        if(posicion===3){
-            console.log(caracter);
-            mostrarTextoEnCaja("div3",caracter)
-        }
-        if(posicion===4){
-            console.log(caracter);
-            mostrarTextoEnCaja("div4",caracter)
-        }
+    if (posicion === 0) {
+        mostrarTexto("div0", letra);
+    } else if (posicion === 1) {
+        mostrarTexto("div1", letra);
+    } else if (posicion === 2) {
+        mostrarTexto("div2", letra);
+    } else if (posicion === 3) {
+        mostrarTexto("div3", letra);
+    } else if (posicion === 4) {
+        mostrarTexto("div4", letra);
     }
 
 }
 
-validar=function (letra){
+validar = function (letra) {
 
-let letrasEncontradas=0;
+    let letrasEncontradas = 0;
 
-    for(let i=0;i<palabraSecreta.length;i++){
-        if(palabraSecreta.charAt(i)===letra){
-            mostrarLetra(letra,i);
+    for (let i = 0; i < palabraSecreta.length; i++) {
+        if (palabraSecreta.charAt(i) === letra) {
+            mostrarLetra(letra, i);
             letrasEncontradas++;
         }
 
@@ -56,38 +41,59 @@ let letrasEncontradas=0;
 
 }
 
+ingresarLetra = function () {
+    let recuperar;
+    recuperar = recuperarTexto("txtLetra");
+    let esValida = true;
 
 
+    for (let i = 0; i < recuperar.length; i++) {
+        let caracter = recuperar.charAt(i);
+        if (!esMayuscula(caracter)) {
+            esValida = false;
 
-guardarPalabra = function (){
+
+        }
+    }
+
+    if (!esValida) {
+        alert("Solo se aceptan mayusculas.");
+
+    } else {
+        validar(recuperar);
+    }
+
+
+}
+
+
+guardarPalabra = function () {
     let palabra
 
-    palabra=recuperarTexto("txtSecreta");
-    let esValida= true;
-    if(palabra.length===5){
+    palabra = recuperarTexto("txtSecreta");
+    let esValida = true;
+    if (palabra.length === 5) {
 
-        for(let i=0;i<palabra.length;i++){
+        for (let i = 0; i < palabra.length; i++) {
             let caracter = palabra.charAt(i);
-            if(!esMayuscula(caracter)){
-                esValida=false;
+            if (!esMayuscula(caracter)) {
+                esValida = false;
 
             }
         }
 
-        if (!esValida){
+        if (!esValida) {
             alert("ERROR: La palabra tiene 5 caracteres pero no todos son mayúsculas.");
 
-        }else{
-            palabraSecreta=palabra;
+        } else {
+            palabraSecreta = palabra;
             console.log(palabraSecreta);
         }
 
-    }else{
+    } else {
         alert("ERROR: La palabra no tiene exactamente 5 caracteres.");
 
     }
-
-
 
 
 }
