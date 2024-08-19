@@ -10,6 +10,39 @@ esMayuscula = function (caracter){
     }
 }
 
+mostrarLetra=function (letra,posicion){
+
+
+    for(let i=0;i<letra.length;i++){
+        let caracter = letra.charAt(i);
+        posicion = i;
+        if(posicion===0){
+            console.log(caracter);
+            mostrarTextoEnCaja("div0",caracter)
+        }
+
+        if(posicion===1){
+            mostrarTextoEnCaja("div1",caracter)
+            console.log(caracter);
+        }
+        if(posicion===2){
+            mostrarTextoEnCaja("div2",caracter)
+            console.log(caracter);
+        }
+        if(posicion===3){
+            console.log(caracter);
+            mostrarTextoEnCaja("div3",caracter)
+        }
+        if(posicion===4){
+            console.log(caracter);
+            mostrarTextoEnCaja("div4",caracter)
+        }
+    }
+
+}
+
+
+
 
 guardarPalabra = function (){
     let palabra
@@ -39,7 +72,7 @@ guardarPalabra = function (){
 
     }
 
-
+mostrarLetra(palabraSecreta);
 
 
 
