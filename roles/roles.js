@@ -270,3 +270,22 @@ limpiar = function () {
 
     deshabilitarComponente("btnGuardar");
 }
+
+
+buscarPorRol=function () {
+
+    let cedula = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado = buscarEmpleado(cedula);
+
+    if (empleado) {
+        mostrarTexto("infoCedula", empleado.cedula);
+
+        let nombreCompleto = empleado.nombre + " " + empleado.apellido;
+        mostrarTexto("infoNombre", nombreCompleto);
+
+        mostrarTexto("infoSueldo", empleado.sueldo);
+    } else {
+        alert("Empleado no existe");
+    }
+
+}
