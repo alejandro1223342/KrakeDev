@@ -289,3 +289,40 @@ buscarPorRol=function () {
     }
 
 }
+
+calcularAporteEmpleado = function (sueldo) {
+    // Calcula el 9.45% del sueldo
+    let porcentaje = 9.45;
+    let aporte = (sueldo * porcentaje) / 100;
+    return aporte;
+}
+
+calcularValorAPagar = function(sueldo,aporte,descuento){
+
+    let resultado= (sueldo-aporte-descuento);
+
+    return resultado;
+}
+
+calcularRol= function () {
+
+    let infoSueldo=recuperarTextoDiv("infoSueldo");
+
+    let descuentos=recuperarFloat("txtDescuentos");
+
+
+
+    if (isNaN(descuentos) || descuentos < 0 || descuentos > infoSueldo) {
+        mostrarTexto("lblErrorDescuentos", "El descuento debe ser un número decimal entre 0 y el sueldo.");
+        return;
+    }
+
+
+    let aporteEmple=calcularAporteEmpleado(infoSueldo);
+    mostrarTexto("infoIESS",aporteEmple)
+
+    let valorAPagar=calcularValorAPagar(infoSueldo,aporteEmple , descuentos)
+    mostrarTexto("infoPago", valorAPagar.toFixed(2));
+
+
+}
