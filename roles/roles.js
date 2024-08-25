@@ -28,6 +28,7 @@ mostrarOpcionRol = function () {
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
     deshabilitarComponente("btnGuardarRol");
+
 }
 
 mostrarOpcionResumen = function () {
@@ -364,6 +365,7 @@ agregarRol = function (rol) {
 
         roles.push(rol);
         alert("Rol agregado correctamente.");
+
     } else {
         // Mostrar mensaje de error si ya existe un rol con la misma cédula
         alert("Ya existe un rol con la cédula " + rol.cedula);
@@ -398,12 +400,53 @@ guardarRol = function () {
         aporteEmpleador: aporte, // Aporte del empleador calculado
     };
 
-   agregarRol(rol);
+    agregarRol(rol);
 
     console.log("Rol agregado:", rol);
+    mostrarRoles();
+    mostrarTotales();
 }
 
 mostrarRoles = function () {
+    let cmpTabla = document.getElementById("tablaResumen");
+    let contenidoTabla = "<table><tr>" +
+        "<th>CEDULA</th>" +
+        "<th>NOMBRE</th>" +
+        "<th>VALOR A PAGAR</th>" +
+        "<th>APORTE EMPLEADO</th>" +
+        "<th>APORTE EMPLEADOR</th>" +
+        "</tr>";
+
+    roles.forEach(rol => {
+        contenidoTabla +=
+            "<tr><td>" + rol.cedula + "</td>" +
+            "<td>" + rol.nombre + "</td>" +
+            "<td>" + rol.valorAPagar.toFixed(2) + "</td>" +
+            "<td>" + rol.aporteEmpleado.toFixed(2) + "</td>" +
+            "<td>" + rol.aporteEmpleador.toFixed(2) + "</td></tr>";
+    });
+
+    contenidoTabla += "</table>";
+    cmpTabla.innerHTML = contenidoTabla;
+};
+
+mostrarTotales = function () {
+    let totalEmpleado = 0;
+    let Empleado = 0;
+    let totalAPagar = 0;
+
+    for (let i = 0; i < roles.length; i++) {
+        totalEmpleado += rol.aporteEmpleado;
+        Empleado += rol.aporteEmpleador;
+        totalAPagar += rol.valorAPagar;
+    }
+
+    mostrarTexto("infoTotalPago", totalEmpleado);
+    mostrarTexto("infoAporteEmpresa",Empleado);
+    mostrarTexto("infoAporteEmpleado",totalAPagar);
+
+    let resultado= totalEmpleado+Empleado+totalAPagar;
 
 
+    mostrarTexto("TOTAL",resultado)
 }
