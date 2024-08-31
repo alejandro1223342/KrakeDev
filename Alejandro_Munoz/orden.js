@@ -94,3 +94,26 @@ mostrarPersona = function () {
     cmpTabla.innerHTML = contenidoTabla;
 }
 
+encontrarMayor = function (){
+
+    let personaMayor=personas[0];
+
+    let elementoPersona;
+
+    for (let i = 1; i < personas.length; i++) {
+        elementoPersona = personas[i];
+        console.log(elementoPersona);
+
+        //Recibe un arreglo string y se debe convertir a letras
+        if (parseInt(elementoPersona.edad, 10) > parseInt(personaMayor.edad, 10)) {
+            personaMayor = elementoPersona;
+        }
+    }
+
+    console.log("La persona mayor es:", personaMayor);
+    return personaMayor;
+}
+
+determinarMayor = function (){
+encontrarMayor();
+}
