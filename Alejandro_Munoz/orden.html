@@ -11,20 +11,6 @@
 
     <div id="divEmpleado">
         <div class="principal">
-            <div class="area">
-                <div class="ingresoDatos">
-                    <div class="tituloCampo">
-                        CEDULA
-                    </div>
-                    <div>
-                        <input type="text" class="cajaTexto" id="txtBusquedaCedula" />
-                        <div class="error" id="lblErrorBusqueda"></div>
-                    </div>
-                </div>
-                <div class="contenedorBoton">
-                    <input type="button" value="BUSCAR" class="estiloBoton" onclick="ejecutarBusqueda()"/>
-                </div>
-            </div>
 
             <div class="area">
 
@@ -46,17 +32,24 @@
                         <input type="text" class="cajaTexto" id="txtEdad" />
                         <div class="error" id="lblErrorEdad"></div>
                     </div>
+
+
+                </div>
+
+                <div>
+                    <div class="error" id="lblMayor"></div>
                 </div>
                 <div class="botones">
                     <div class="contenedorBoton">
-                        <input type="button" value="ENCONTRAR MAYOR" class="estiloBoton"  onclick="determinarMayor()"/>
+                        <input type="button" value="Buscar Mayor" class="estiloBoton"  onclick="determinarMayor()"/>
+                    </div>
+                    <div class="contenedorBoton">
+                        <input type="button" value="Buscar Menor" class="estiloBoton"  onclick="determinarMenor()"/>
                     </div>
                     <div class="contenedorBoton">
                         <input type="button" value="GUARDAR" class="estiloBoton" id="btnGuardar" onclick="agregarPersona();" />
                     </div>
-                    <div class="contenedorBoton">
-                        <input type="button" value="LIMPIAR" class="estiloBoton"  />
-                    </div>
+
                 </div>
                 <div id="tablaPersona" class="areaTabla">
 

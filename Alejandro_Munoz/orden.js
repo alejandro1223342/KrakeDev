@@ -115,5 +115,33 @@ encontrarMayor = function (){
 }
 
 determinarMayor = function (){
-encontrarMayor();
+let mayor=encontrarMayor();
+
+    mostrarTexto("lblMayor","La persona Mayor es "+mayor.nombre+" anios "+mayor.edad)
+}
+
+encontrarMenor = function (){
+
+    let personaMayor=personas[0];
+
+    let elementoPersona;
+
+    for (let i = 1; i < personas.length; i++) {
+        elementoPersona = personas[i];
+        console.log(elementoPersona);
+
+        //Recibe un arreglo string y se debe convertir a letras
+        if (parseInt(elementoPersona.edad, 10) < parseInt(personaMayor.edad, 10)) {
+            personaMayor = elementoPersona;
+        }
+    }
+
+    console.log("La persona menor es:", personaMayor);
+    return personaMayor;
+}
+
+determinarMenor = function (){
+    let mayor=encontrarMenor();
+
+    mostrarTexto("lblMayor","La persona menor es "+mayor.nombre+" anios "+mayor.edad)
 }
