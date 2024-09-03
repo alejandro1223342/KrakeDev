@@ -59,30 +59,52 @@
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">NUMERO DE CUENTA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" id="txtCuentaTra" class="caja" />
                     </div>
-                </div>
-                <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">CEDULA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" id="txtCedulaTra" class="caja" />
+                    </div>
+
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">NOMBRE</div>
+                    <div class="cajaTexto">
+                        <input type="text" id="txtNombreTra" class="caja" />
+                    </div>
+
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">SALDO</div>
+                    <div class="cajaTexto">
+                        <input type="text" id="txtSaldoTra" class="caja" />
+                    </div>
+
+                </div>
+                <div class="contenedorAcciones">
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()"/>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">INGRESE MONTO</div>
+                    <div class="cajaTexto">
+                        <input type="text" id="txtMontoDepo" class="caja" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
-                    <input type="button" value="RETIRAR" />
-                    
+                    <input type="button" value="DEPOSITAR" onclick="depositar()"/>
+                    <input type="button" value="RETIRAR" onclick="retirar()"/>
+
                 </div>
-              
+
             </div>
         </div>
         <div class="contenido" id="divMovimientos">
-          
+
             <div class="inferior">
                 <div class="titulo">MOVIMIENTOS</div>
                 <div class="contenedorTexto">
@@ -92,7 +114,7 @@
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />                    
+                    <input type="button" value="BUSCAR" />
                 </div>
                 <div id="tablaMovimientos">
                     TABLA
