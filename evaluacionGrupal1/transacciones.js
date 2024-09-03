@@ -49,5 +49,26 @@ ejecutarBusqueda = function () {
 }
 
 
+depositar = function () {
+
+    let numeroCuenta = recuperarTexto("txtCuentaTra");
+    let monto = parseFloat(recuperarTexto("txtMontoDepo"));
+
+    let cuenta = buscarCuenta(numeroCuenta);
+
+    cuenta.saldo += monto;
+
+    movimientosCuenta = {
+        numeroCuenta: numeroCuenta,
+        monto: monto,
+        tipo: "C"  // Crédito
+    };
+
+    movimientos.push(movimientosCuenta);
+    console.log(movimientosCuenta)
+    alert("DEPÓSITO REALIZADO");
+    mostrarTextoEnCaja("txtSaldoTra", cuenta.saldo);
+
+}
 
 
