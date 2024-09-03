@@ -72,3 +72,51 @@ depositar = function () {
 }
 
 
+depositar = function () {
+
+    let numeroCuenta = recuperarTexto("txtCuentaTra");
+    let monto = parseFloat(recuperarTexto("txtMontoDepo"));
+
+    let cuenta = buscarCuenta(numeroCuenta);
+
+    cuenta.saldo += monto;
+
+    movimientosCuenta = {
+        numeroCuenta: numeroCuenta,
+        monto: monto,
+        tipo: "C"  // Crédito
+    };
+
+    movimientos.push(movimientosCuenta);
+    console.log(movimientosCuenta)
+    alert("DEPÓSITO REALIZADO");
+    mostrarTextoEnCaja("txtSaldoTra", cuenta.saldo);
+
+}
+retirar = function () {
+    let numeroCuenta = recuperarTexto("txtCuentaTra");
+    let monto = parseFloat(recuperarTexto("txtMontoDepo"));
+
+    let cuenta = buscarCuenta(numeroCuenta);
+
+    if(cuenta.saldo<monto || cuenta.saldo===0){
+        alert("No puede retirar esta cantidad")
+
+    }else{
+        cuenta.saldo -= monto;
+
+        movimientosCuenta = {
+            numeroCuenta: numeroCuenta,
+            monto: monto,
+            tipo: "D"  // Crédito
+        };
+
+        movimientos.push(movimientosCuenta);
+        console.log(movimientosCuenta)
+
+        alert("RETIRO REALIZADO");
+        mostrarTextoEnCaja("txtSaldoTra", cuenta.saldo);
+    }
+
+
+}
